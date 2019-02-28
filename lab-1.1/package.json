@@ -1,0 +1,19 @@
+{
+  "name": "lab-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "payload-A.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "shift-codegen": "^6.0.0",
+    "shift-parser": "^6.0.1"
+  }
+}
