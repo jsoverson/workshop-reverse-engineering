@@ -1,8 +1,7 @@
 {
-  "name": "lab-2",
+  "name": "lab-1.2",
   "version": "1.0.0",
   "description": "",
-  "main": "payload-A.js",
   "directories": {
     "test": "test"
   },
@@ -15,6 +14,6 @@
   "dependencies": {
     "shift-codegen": "^6.0.0",
     "shift-parser": "^6.0.1",
-    "shift-traverse": "github:jsoverson/shift-traverse-js#2017-update"
+    "shift-reducer": "^5.0.0"
   }
 }

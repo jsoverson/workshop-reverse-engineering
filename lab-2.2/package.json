@@ -2,11 +2,7 @@
   "name": "lab-2.2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
-    "atob": "^2.1.2",
-    "btoa": "^1.2.1",
-    "http-server": "^0.11.1",
     "puppeteer": "^1.12.2"
   },
   "devDependencies": {},

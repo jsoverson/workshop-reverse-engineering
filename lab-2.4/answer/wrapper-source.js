@@ -18,6 +18,10 @@
     }
   });
 
-  { /* wrapped source here */ }
+  /*# injectedScript # Block #*/ { /* Injected source goes here */ }
 
 }())
+
+// This shows how we've rewritten the source to expose a magic seed
+// for use elsewhere in our code.
+console.log(`The magic seed is ${window.magicSeed};`)

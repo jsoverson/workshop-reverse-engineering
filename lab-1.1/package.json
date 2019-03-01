@@ -1,8 +1,7 @@
 {
-  "name": "lab-2",
+  "name": "lab-1.1",
   "version": "1.0.0",
   "description": "",
-  "main": "payload-A.js",
   "directories": {
     "test": "test"
   },

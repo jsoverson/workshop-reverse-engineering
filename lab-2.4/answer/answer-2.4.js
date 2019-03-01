@@ -1,10 +1,12 @@
-const puppeteer = require('puppeteer');
+const path = require('path');
 const fs = require('fs');
-const { parseScript } = require('shift-parser');
-const {default: codegen, FormattedCodeGen } = require('shift-codegen');
+
+const puppeteer = require('puppeteer');
 const atob = require('atob');
 const btoa = require('btoa');
 
+const { parseScript } = require('shift-parser');
+const {default: codegen, FormattedCodeGen } = require('shift-codegen');
 const { applyTemplate } = require('shift-template');
 const Shift = require('shift-ast');
 
@@ -27,7 +29,7 @@ const Shift = require('shift-ast');
     ]
   });
 
-  const wrapperSource = fs.readFileSync('./wrapper-source.js', {encoding:'utf8'});
+  const wrapperSource = fs.readFileSync(path.join(__dirname, 'wrapper-source.js'), {encoding:'utf8'});
 
   client.on('Network.requestIntercepted', async ({ interceptionId, request }) => {
     console.log(`Intercepted ${request.url} {interception id: ${interceptionId}}`);
@@ -37,6 +39,12 @@ const Shift = require('shift-ast');
     const originalSource = response.base64Encoded ? atob(response.body) : response.body;
 
     const originalSourceAST = parseScript(originalSource);
+
+    const magicSeedFunction = originalSourceAST.statements[0].expression.callee.body.statements[0];
+
+    const globalAssignment = parseScript(`window.magicSeed = seed;`).statements[0];
+
+    magicSeedFunction.body.statements.splice(1, 0, globalAssignment);
 
     let wrappedAST = applyTemplate(wrapperSource, {
       injectedScript: x => new Shift.Block({statements: originalSourceAST.statements})

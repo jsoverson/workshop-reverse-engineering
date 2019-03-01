@@ -4,7 +4,7 @@
   "description": "",
   "main": "work.js",
   "scripts": {
-    "server": "http-server example-site"
+    "start": "http-server example-site"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,6 @@
     "puppeteer": "^1.12.2",
     "shift-codegen": "^6.0.0",
     "shift-parser": "^6.0.1",
-    "shift-template": "^2.0.0",
-    "shift-traverse": "git+ssh://git@github.com/jsoverson/shift-traverse-js.git#2017-update"
+    "shift-template": "^2.0.0"
   }
 }

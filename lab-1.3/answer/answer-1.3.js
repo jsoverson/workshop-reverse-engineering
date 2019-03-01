@@ -13,7 +13,8 @@ const tree = parseScript(payloadSource);
 
 // Perform scope analysis across the entire tree
 const globalScope = analyzeScope(tree);
-
+console.log(JSON.stringify(globalScope));
+process.exit();
 // Generate a lookup table for our scope definition
 const lookupTable = new ScopeLookup(globalScope);
 
