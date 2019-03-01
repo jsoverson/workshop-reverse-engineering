@@ -1,8 +1,7 @@
 {
-  "name": "lab-4",
+  "name": "lab-final",
   "version": "1.0.0",
   "description": "",
-  "main": "work.js",
   "scripts": {
     "start": "http-server example-site"
   },
