@@ -2,34 +2,33 @@
 
 ## Welcome 
 
-Hi! This workshop is designed to walk you through two major concepts 
+This workshop walks participants through two major concepts 
 critical for reverse engineering web applications. There are different
-ways to reverse engineer any software, these techniques are based on my
-experience that the only truly effective way of analyzing and controlling
-web application is to
+ways to reverse engineer any software -- these techniques are a result 
+of 15 years of experience both defeating applications and building software
+to protect against applications from being defeated. The most effective way 
+of analyzing and controlling web applications is to:
 
 1) Reuse as much application code as possible.
 2) Intercept, modify, and simulate system or browser APIs.
 3) Drive a browser programmatically.
 
 Other methods may involve compiling a custom browser, managing a reverse proxy,
-or working with a snapshot of an application and creating software around that.
-Each of those techniques are effective but are very dependent on both the 
-application and browser staying the same for long which is very rarely something
-you can rely on.
+or working with a snapshot of an application.
+Each of those techniques are effective but are dependent on both the 
+application and browser staying the same for an extended duration which
+you can't rely on with modern web sites.
 
-The techniques I use are meant to leverage the latest versions of the world's most
-popular browser and to extract as much information from existing application code
-as possible.
+These labs leverage the production version of Chrome, the world's most
+popular browser, and the Shift suite of JavaScript tools.
 
 ### Lab Series 1 - Programmatic transformation of JavaScript
 
-JavaScript is the primary language you will experience on the internet and it is
-served in a raw but often mangled form. Having executable source code available
+JavaScript is the primary language that drives web pages. You can observe it raw but often mangled by build processes, compilers, and optimizers. Having executable source code available
 allows us to use existing source code parsers and transformation tools for 
-our analysis. By programmtically extracting utility functions and modifying 
-JavaScript to publicly expose private data structures we can more easily create
-a software that manipulates an application's behavior.
+our analysis. By programmtically extracting application level functions and modifying 
+JavaScript to publicly expose private data structures we can create
+a software that closely manipulates an application's behavior.
 
 ### Lab Series 2 - Programmatic control of a web browser
 
@@ -41,12 +40,16 @@ want to do with our analysis.
 
 Puppeteer is Google's nodejs library that drives Chrome via the Chrome Devtools Protocol.
 The protocol is open and does not require nodejs to interface with it. There are 
-libraries and bindings for many popular languages to interface with the Chrome Devtools
-Protocol and any of these concepts can be ported outside node.
+libraries and bindings for popular languages to interface with the Chrome Devtools
+Protocol and you can port all the concepts in these labs outside node.
 
-## Lab structure
+## Labs
 
-Labs are laid out in order and contain a similar structure across all.
+This lab content is located at https://github.com/jsoverson/workshop-reverse-engineering
+
+## Directory structure
+
+Lab directories all contain a similar structure.
 
 ```
 lab-#.#/
@@ -69,8 +72,7 @@ $ npm install
 
 ### Work
 
-The work should be done in the `work/` directory. A stub file with boilerplate and comments
-is included. Feel free to remove or modify any line.
+Complete work in the `work/` directory. A stub file is included with boilerplate and comments. Feel free to remove or change any line.
 
 ### Tests
 
